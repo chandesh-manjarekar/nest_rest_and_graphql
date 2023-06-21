@@ -29,7 +29,7 @@
 ## Installation
 
 ```bash
-$ npm install
+$ npm i
 ```
 
 ## Running the app
@@ -40,34 +40,49 @@ $ npm run start
 
 # watch mode
 $ npm run start:dev
-
-# production mode
-$ npm run start:prod
 ```
 
-## Test
-
+## Rest API
+Get API
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+curl --location 'localhost:3000/products'
 ```
 
-## Support
+Post API
+```bash
+curl --location 'localhost:3000/products' \
+--header 'Content-Type: application/json' \
+--data '{
+    "title": "Test Product",
+    "description": "1st Product",
+    "price": 49.99
+}'
+```
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Patch API
+```bash
+curl --location --request PATCH 'localhost:3000/products/0.6382303394975983' \
+--header 'Content-Type: application/json' \
+--data '{
+    "title": "This is 2nd test product"
+}'
+```
 
-## Stay in touch
+Delete API
+```bash
+curl --location --request DELETE 'localhost:3000/products/0.6382303394975983'
+```
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+<img width="754" alt="Screenshot 2023-06-21 at 9 09 50 PM" src="https://github.com/chandesh-manjarekar/nest_rest_and_graphql/assets/46016658/9ff28a3b-df61-41c4-a3b0-274df95b2e4a">
 
-## License
 
-Nest is [MIT licensed](LICENSE).
+
+## GraphQL API
+```bash
+http://localhost:3000/graphql
+```
+
+
+<img width="1722" alt="Screenshot 2023-06-21 at 9 09 06 PM" src="https://github.com/chandesh-manjarekar/nest_rest_and_graphql/assets/46016658/e9122b47-aaee-400c-b7af-3bf7f03390f9">
+<img width="1725" alt="Screenshot 2023-06-21 at 9 09 19 PM" src="https://github.com/chandesh-manjarekar/nest_rest_and_graphql/assets/46016658/3d4e1aa9-4efa-445b-8c7d-0a4bdd583dee">
+<img width="1719" alt="Screenshot 2023-06-21 at 9 09 31 PM" src="https://github.com/chandesh-manjarekar/nest_rest_and_graphql/assets/46016658/5b5b14e9-6448-4d0b-b007-bd5091bce252">
